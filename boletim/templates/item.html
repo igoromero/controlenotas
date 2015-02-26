@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Disciplina{% endblock %}
+{% block corpo %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+
+  <label>Média:</label>
+  <span>{{media|floatformat}}</span>
+   <p></p>
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      {% bootstrap_icon "update" %} Atualizar
+    </button>
+  {% endbuttons %}
+</form>
+
+
+{% endblock %}

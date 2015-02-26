@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Remover disciplina{% endblock %}
+{% block corpo %}
+
+    <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="2">{{ disciplina.nome }}</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Nota 1</td>
+                </td><td>{{ disciplina.nota1 }}</td>
+            </tr>
+            <tr>
+                <td>Nota 2</td>
+                <td>{{ disciplina.nota2 }}</td>
+            <tr>
+                <td>Nota 3</td>
+                <td>{{ disciplina.nota3 }}</td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-danger">Remover</button> ou <a href="/" class="btn">Cancelar</a></form>
+</form>
+{% endblock %}
